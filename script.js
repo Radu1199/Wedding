@@ -1,5 +1,4 @@
 const soundButton = document.getElementById('soundToggle');
-const openButton = document.getElementById('openInvite');
 const music = document.getElementById('bgMusic');
 const video = document.getElementById('introVideo');
 const cover = document.querySelector('.cover');
@@ -41,7 +40,7 @@ soundButton.addEventListener('click', async () => {
   }
 });
 
-openButton.addEventListener('click', () => {
+const openInvitation = () => {
   cover.classList.add('hide');
   invitation.classList.add('show');
   invitation.setAttribute('aria-hidden', 'false');
@@ -49,7 +48,9 @@ openButton.addEventListener('click', () => {
 
   video.pause();
   updateCountdown();
-});
+};
+
+cover.addEventListener('click', openInvitation);
 
 rsvpForm.addEventListener('submit', event => {
   event.preventDefault();
