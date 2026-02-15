@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boda Mar & Jaume</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <audio id="bgMusic" src="https://boda-mar-jaume.lovable.app/assets/intro-music-S2szIoUv.mp3" preload="auto" loop></audio>
+
+    <main class="cover" aria-label="Invitación de boda de Mar y Jaume">
+      <video
+        id="introVideo"
+        class="cover-media"
+        src="https://boda-mar-jaume.lovable.app/assets/intro-video-BpkZMtTn.mov"
+        poster="https://boda-mar-jaume.lovable.app/assets/intro-poster-BQrMtd4k.png"
+        playsinline
+        preload="auto"
+      ></video>
+      <div class="cover-fallback" aria-hidden="true"></div>
+    </main>
+
+    <button id="soundToggle" class="sound-toggle" aria-label="Silenciar" title="Silenciar">
+      🔊
+    </button>
+
+    <button id="openInvite" class="open-invite" aria-label="Abrir invitación" title="Abrir invitación">➤</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
