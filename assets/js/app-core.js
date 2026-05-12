@@ -499,23 +499,31 @@ const setupRevealAnimations = () => {
 
 const setupCountdownWindowBackground = () => {
   const countdownFrame = document.querySelector('.countdown-frame');
-  const eventDetailsSection = document.querySelector('.event-details-section');
 
-  if (!countdownFrame && !eventDetailsSection) {
+  if (!countdownFrame) {
     return;
   }
 
   let ticking = false;
+  let countdownAnchorTop = 0;
 
-  const syncOffset = () => {
+  const getScrollY = () => window.scrollY || window.pageYOffset || 0;
+
+  const refreshAnchors = () => {
+    const scrollY = getScrollY();
+
     if (countdownFrame) {
       const rect = countdownFrame.getBoundingClientRect();
-      countdownFrame.style.setProperty('--countdown-bg-offset', `${(-rect.top).toFixed(1)}px`);
+      countdownAnchorTop = rect.top + scrollY;
     }
+  };
 
-    if (eventDetailsSection) {
-      const rect = eventDetailsSection.getBoundingClientRect();
-      eventDetailsSection.style.setProperty('--event-details-bg-offset', `${(-rect.top).toFixed(1)}px`);
+  const syncOffset = () => {
+    const scrollY = getScrollY();
+    const roundedScrollY = Math.max(0, Math.round(scrollY));
+
+    if (countdownFrame) {
+      countdownFrame.style.setProperty('--countdown-bg-offset', `${Math.round(roundedScrollY - countdownAnchorTop)}px`);
     }
 
     ticking = false;
@@ -530,9 +538,17 @@ const setupCountdownWindowBackground = () => {
     requestAnimationFrame(syncOffset);
   };
 
+  refreshAnchors();
   syncOffset();
+  window.addEventListener('load', () => {
+    refreshAnchors();
+    syncOffset();
+  });
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', syncOffset);
+  window.addEventListener('resize', () => {
+    refreshAnchors();
+    syncOffset();
+  });
 };
 
 const updateCountdown = () => {

@@ -129,7 +129,20 @@
 }
 
 
+@media (max-width: 1024px) {
+  .event-details-section {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 @media (max-width: 600px) {
+  .event-details-section {
+    background-size: cover;
+    background-position: center;
+  }
+
   .ceremony-card {
     width: min(86vw, 420px);
   }
