@@ -1,0 +1,273 @@
+@media (max-width: 500px) {
+  .envelope-intro {
+    padding: 0;
+  }
+
+  .envelope-container {
+    min-height: 100vh;
+    justify-content: center;
+  }
+
+  .envelope-wrapper {
+    width: min(320px, calc(100vw - 1rem));
+    aspect-ratio: 300 / 220;
+  }
+
+  .envelope {
+    width: 100%;
+    aspect-ratio: 300 / 220;
+  }
+
+  .letter-container {
+    top: -185px;
+    height: 300px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 62%, 55% 90%, 45% 90%, 0% 62%);
+  }
+
+  .letter {
+    width: 255px;
+    height: 185px;
+    transform: translateX(-50%) translateY(185px);
+  }
+
+  .envelope:not(.open):hover~.letter-container .letter {
+    transform: translateX(-50%) translateY(185px);
+  }
+
+  .envelope.open~.letter-container .letter {
+    transform: translateX(-50%) translateY(-28px);
+  }
+
+  .envelope-back-triangle {
+    top: -42px;
+    width: 86px;
+    height: 50px;
+    z-index: 7;
+  }
+
+  .letter-content {
+    padding: 1.45rem 0.8rem 0.8rem;
+  }
+
+  .letter-subtitle {
+    font-size: 0.66rem;
+  }
+
+  .letter-names {
+    font-size: 2rem;
+  }
+
+  .letter-date {
+    font-size: 0.86rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .envelope-intro {
+    align-items: center;
+    padding-top: 0;
+  }
+
+  .envelope-wrapper {
+    width: min(560px, calc(100vw - 8rem));
+    aspect-ratio: 560 / 410;
+  }
+
+  .envelope {
+    width: 100%;
+    aspect-ratio: 560 / 410;
+  }
+
+  .letter-container {
+    top: -230px;
+    height: 450px;
+  }
+
+  .letter {
+    width: 440px;
+    height: 246px;
+    transform: translateX(-50%) translateY(230px);
+  }
+
+  .envelope:not(.open):hover~.letter-container .letter {
+    transform: translateX(-50%) translateY(230px);
+  }
+
+  .envelope.open~.letter-container .letter {
+    transform: translateX(-50%) translateY(-26px);
+  }
+
+  .envelope-back-triangle {
+    width: 114px;
+    height: 56px;
+    top: -30px;
+  }
+
+  .hero-title {
+    left: 50%;
+    right: auto;
+    width: min(100%, 1180px);
+    transform: translateX(-50%);
+  }
+
+  .countdown-main {
+    max-width: 1180px;
+    margin-inline: auto;
+  }
+
+  .overlay-card-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 3.2rem;
+    max-width: 1180px;
+  }
+
+  .ceremony-card {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .ceremony-card {
+    width: min(86vw, 420px);
+  }
+
+  .ceremony-location {
+    font-size: clamp(1.14rem, 5vw, 1.34rem);
+  }
+
+  .ceremony-meta-split {
+    gap: 0.68rem;
+  }
+
+  .ceremony-meta-label {
+    font-size: clamp(1.08rem, 4.5vw, 1.28rem);
+  }
+
+  .ceremony-meta-value {
+    font-size: clamp(1.08rem, 4.5vw, 1.28rem);
+  }
+
+  .ceremony-map-button {
+    font-size: clamp(1.08rem, 4.5vw, 1.28rem);
+  }
+
+  .hero {
+    --hero-names-top: clamp(170px, 33vh, 300px);
+    --hero-names-height: clamp(118px, 40vw, 180px);
+    --hero-heart-bottom: clamp(18px, 5vh, 36px);
+    --hero-date-gap: clamp(30px, 7vh, 48px);
+  }
+
+  .hero-title {
+    width: 100%;
+  }
+
+  .hero-title-line-top {
+    top: clamp(8px, 2.4vw, 20px);
+    left: clamp(12px, 5vw, 24px);
+    font-size: clamp(2.7rem, 16vw, 4.8rem);
+  }
+
+  .hero-title-line-middle {
+    font-size: clamp(4.8rem, 30vw, 9.2rem);
+  }
+
+  .hero-title-line-bottom {
+    bottom: clamp(20px, 6vw, 42px);
+    right: clamp(8px, 5vw, 18px);
+    font-size: clamp(2.9rem, 16vw, 5.1rem);
+  }
+
+  .hero-date-text {
+    font-size: clamp(0.7rem, 3.2vw, 0.92rem);
+    letter-spacing: 0.07em;
+  }
+
+  .hero-bounce-heart {
+    font-size: clamp(1.45rem, 8vw, 2.05rem);
+  }
+
+  .intro-message {
+    font-size: 18px;
+  }
+
+  .calendar-header {
+    gap: 0.2rem;
+    font-size: 0.62rem;
+  }
+
+  .calendar-grid {
+    gap: 0.2rem;
+    font-size: 0.78rem;
+  }
+
+  .countdown-main {
+    gap: 0.15rem;
+  }
+
+  .heart-day::before {
+    font-size: 4.2rem;
+  }
+
+  .parents-card {
+    border-radius: 26px;
+    padding: 2.9rem 0.85rem 2.9rem;
+  }
+
+  .parents-names {
+    gap: 0.18rem;
+  }
+
+  .parents-blessing {
+    font-size: clamp(1.06rem, 4vw, 1.24rem);
+  }
+
+  .parents-side {
+    font-size: clamp(1.2rem, 5.1vw, 1.58rem);
+    line-height: 1.14;
+    white-space: nowrap;
+  }
+
+  .godparents-side {
+    font-size: clamp(1.3rem, 5.3vw, 1.66rem);
+  }
+
+  .godparents-names {
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+
+  .photo-collage-section {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
+  .photo-collage-frame {
+    width: min(96vw, 510px);
+  }
+
+  .event-details-section {
+    margin-top: 0.05rem;
+  }
+
+  .overlay-underlay {
+    padding-bottom: 0.12rem;
+  }
+
+  .overlay-card-content {
+    padding-top: 3.2rem;
+    padding-bottom: 3.8rem;
+  }
+
+  .event-block-spaced {
+    margin-top: 0;
+  }
+
+}
+
+
+
+

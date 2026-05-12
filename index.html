@@ -1,81 +1,420 @@
 ﻿<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boda Mar & Jaume</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <audio id="bgMusic" src="https://boda-mar-jaume.lovable.app/assets/intro-music-S2szIoUv.mp3" preload="auto" loop></audio>
+<html lang="en">
 
-    <main class="cover" aria-label="InvitaciÃ³n de boda de Mar y Jaume">
-      <video
-        id="introVideo"
-        class="cover-media"
-        src="https://boda-mar-jaume.lovable.app/assets/intro-video-BpkZMtTn.mov"
-        poster="https://boda-mar-jaume.lovable.app/assets/intro-poster-BQrMtd4k.png"
-        playsinline
-        preload="auto"
-      ></video>
-      <div class="cover-fallback" aria-hidden="true"></div>
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rebeca si Radu Wedding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="img/hero_illustration.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-    <button id="soundToggle" class="sound-toggle" aria-label="Silenciar" title="Silenciar">ðŸ”Š</button>
+<body>
+  <section id="envelopeIntro" class="envelope-intro" role="button" tabindex="0"
+    aria-label="Deschide invitația Rebeca și Radu">
+    <div class="envelope-container">
+      <div class="envelope-wrapper">
+        <div class="envelope" id="envelope">
+          <div class="envelope-shadow"></div>
 
-    <main id="invitation" class="invitation" aria-hidden="true">
-      <section class="hero">
-        <img class="hero-illustration" src="https://boda-mar-jaume.lovable.app/assets/hero-illustration-DrhagIJw.png" alt="Nos casamos" />
-        <p class="eyebrow">Nos casamos</p>
-        <h1>Mar &amp; Jaume</h1>
-        <p>12 Septiembre 2026 Â· Finca Biniagual, Mallorca</p>
-        <div class="countdown" id="countdown" aria-live="polite"></div>
-      </section>
+          <div class="envelope-back">
+            <div class="envelope-texture"></div>
+          </div>
+          <div class="envelope-back-triangle" aria-hidden="true"></div>
 
-      <section class="card">
-        <h2>Detalles del dÃ­a</h2>
-        <p>Todo lo que necesitas saber para acompaÃ±arnos en nuestro dÃ­a mÃ¡s especial.</p>
-        <img src="https://boda-mar-jaume.lovable.app/assets/finca-biniagual-tpK1hn9e.webp" alt="Finca Biniagual" class="location-image" />
-        <p><strong>LocalizaciÃ³n:</strong> Finca Biniagual</p>
-        <div class="actions">
-          <a href="https://maps.google.com/?q=Finca+Biniagual+Mallorca" target="_blank" rel="noopener noreferrer">Abrir en Maps</a>
-          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Mar+y+Jaume&details=Finca+Biniagual,+Mallorca&location=Finca+Biniagual&dates=20260912T150000Z/20260913T010000Z" target="_blank" rel="noopener noreferrer">AÃ±adir al calendario</a>
+          <div class="envelope-flap-top">
+            <svg viewBox="0 0 380 180" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0,0 L190,160 L380,0 L380,5 L190,165 L0,5 Z" class="flap-shadow" />
+              <path d="M0,0 L190,155 L380,0 Z" class="flap-main" />
+              <path d="M5,0 L190,145 L375,0" class="flap-inner" fill="none" stroke-width="1" />
+            </svg>
+            <div class="envelope-texture"></div>
+          </div>
+
+          <div class="envelope-flaps-side">
+            <svg viewBox="0 0 381.31 269.36" preserveAspectRatio="none" aria-hidden="true">
+              <path
+                d="M 0 0 L 0 269.36 C 40.5 241.89 81.09 214.52 121.51 186.93 C 139.4 174.72 161.88 159.86 162.13 135.65 C 162.42 105.84 130.08 90.17 108.84 75.45 L 42.14 29.21 C 32.09 22.25 22.04 15.28 12 8.32 C 10.77 7.46 0 1.56 0 0 Z M 381.31 0 L 381.31 269.36 C 340.81 241.89 300.22 214.52 259.8 186.93 C 241.91 174.72 219.43 159.86 219.18 135.65 C 218.89 105.84 251.23 90.17 272.47 75.45 L 339.17 29.21 C 349.22 22.25 359.27 15.28 369.31 8.32 C 370.54 7.46 381.31 1.56 381.31 0 Z"
+                class="flap-main" />
+            </svg>
+            <div class="envelope-texture"></div>
+          </div>
+
+          <div class="envelope-flap-bottom">
+            <svg viewBox="0 0 381.31 157.112" preserveAspectRatio="none" aria-hidden="true">
+              <path
+                d="M 381.31 157.102 L 0 157.102 L 0 124.062 L 168.72 6.562 C 182.034 -2.187 199.276 -2.187 212.59 6.562 L 381.31 124.072 L 381.31 157.112 Z"
+                class="flap-main" />
+            </svg>
+            <div class="envelope-texture"></div>
+          </div>
         </div>
+
+        <div class="letter-container">
+          <div class="letter" id="letter">
+            <div class="letter-content">
+              <p class="letter-subtitle">Sunteți invitați la nunta noastră</p>
+              <h2 class="letter-names">Rebeca &amp; Radu</h2>
+              <div class="letter-divider">
+                <span></span>
+                <span class="divider-heart" aria-hidden="true">&#10084;</span>
+                <span></span>
+              </div>
+              <p class="letter-date">10 Oct 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="envelope-seal" aria-hidden="true">
+          <img class="seal-image" src="img/sigiliu.png" alt="" />
+        </div>
+
+        <button id="envelopeContinue" class="envelope-continue" type="button">Deschide invitația</button>
+        <p id="envelopeHint" class="envelope-hint">Deschide invitația</p>
+      </div>
+    </div>
+  </section>
+
+  <main id="invitation" class="invitation" aria-hidden="true">
+    <section class="hero">
+      <img class="hero-illustration" src="img/hero_illustration.png" alt="Rebeca si Radu" fetchpriority="high" />
+      <h1 class="hero-title">
+        <span class="hero-title-line hero-title-line-top">Rebeca</span>
+        <span class="hero-title-line hero-title-line-middle">&amp;</span>
+        <span class="hero-title-line hero-title-line-bottom">Radu</span>
+      </h1>
+      <p class="hero-date-text">10 Oct 2026</p>
+      <span class="hero-bounce-heart" aria-hidden="true">♥</span>
+    </section>
+
+    <section class="intro-message reveal-up">
+      <div class="intro-monogram" aria-hidden="true">
+        <svg class="intro-monogram-heart intro-monogram-heart-outer" viewBox="0 0 100 90" aria-hidden="true">
+          <path
+            d="M50 82 L45 77 C20 55 6 42 6 24 C6 11 16 3 28 3 C37 3 44 7 50 15 C56 7 63 3 72 3 C84 3 94 11 94 24 C94 42 80 55 55 77 Z" />
+        </svg>
+        <svg class="intro-monogram-heart intro-monogram-heart-middle" viewBox="0 0 100 90" aria-hidden="true">
+          <path
+            d="M50 82 L45 77 C20 55 6 42 6 24 C6 11 16 3 28 3 C37 3 44 7 50 15 C56 7 63 3 72 3 C84 3 94 11 94 24 C94 42 80 55 55 77 Z" />
+        </svg>
+        <svg class="intro-monogram-heart intro-monogram-heart-inner" viewBox="0 0 100 90" aria-hidden="true">
+          <path
+            d="M50 82 L45 77 C20 55 6 42 6 24 C6 11 16 3 28 3 C37 3 44 7 50 15 C56 7 63 3 72 3 C84 3 94 11 94 24 C94 42 80 55 55 77 Z" />
+        </svg>
+        <div class="intro-monogram-initials">
+          <span class="intro-monogram-left">R</span>
+          <span class="intro-monogram-amp">&amp;</span>
+          <span class="intro-monogram-right">R</span>
+        </div>
+      </div>
+      <p class="intro-invite-title">CU DRAG VĂ INVITĂM</p>
+      <p class="intro-invite-text">Să fiți alături de noi în această zi specială, să împărtășim împreună emoția și
+        fericirea acestui moment unic din viața noastră.</p>
+      <div class="infinity-divider" aria-hidden="true"></div>
+    </section>
+
+    <section class="wedding-date-block">
+      <div class="wedding-date-intro reveal-up">
+        <h2 class="script-subtitle">Rezervați data</h2>
+        <p class="month-label">OCTOMBRIE 2026</p>
+        <div class="calendar" aria-label="Calendar Octombrie">
+          <div class="calendar-header">
+            <span>Luni</span>
+            <span>Marți</span>
+            <span>Miercuri</span>
+            <span>Joi</span>
+            <span>Vineri</span>
+            <span>Sâmbătă</span>
+            <span>Duminică</span>
+          </div>
+          <div class="calendar-grid">
+            <span class="empty" aria-hidden="true"></span>
+            <span class="empty" aria-hidden="true"></span>
+            <span class="empty" aria-hidden="true"></span>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span class="heart-day"><span>10</span></span>
+            <span>11</span>
+            <span>12</span>
+            <span>13</span>
+            <span>14</span>
+            <span>15</span>
+            <span>16</span>
+            <span>17</span>
+            <span>18</span>
+            <span>19</span>
+            <span>20</span>
+            <span>21</span>
+            <span>22</span>
+            <span>23</span>
+            <span>24</span>
+            <span>25</span>
+            <span>26</span>
+            <span>27</span>
+            <span>28</span>
+            <span>29</span>
+            <span>30</span>
+            <span>31</span>
+          </div>
+        </div>
+        <div class="infinity-divider heart-divider" aria-hidden="true">
+          <span>♥</span>
+        </div>
+      </div>
+
+      <section class="countdown-frame reveal-up">
+        <h2 class="script-subtitle">Vom deveni o familie în</h2>
+        <div class="countdown-main" id="countdown" aria-live="polite"></div>
       </section>
 
-      <section class="card">
-        <h2>Programa del dÃ­a</h2>
-        <ul class="timeline">
-          <li><strong>16:30</strong> Llegada de invitados</li>
-          <li><strong>17:00</strong> Welcome Drink</li>
-          <li><strong>18:00</strong> Ceremonia</li>
-          <li><strong>19:30</strong> CÃ³ctel</li>
-          <li><strong>21:00</strong> Banquete</li>
-          <li><strong>23:30</strong> Fiesta</li>
-          <li><strong>03:00</strong> Fin de fiesta</li>
-        </ul>
-      </section>
+      <div class="overlay-underlay">
+        <div class="parents-intro-group reveal-up">
+          <div class="infinity-divider" aria-hidden="true"></div>
+          <section class="parents-card" aria-label="ALĂTURI DE NOI VOR FI PĂRINȚII">
+            <p class="parents-blessing">AVÂND BINECUVÂNTAREA PĂRINȚILOR</p>
+            <div class="infinity-divider parents-card-divider" aria-hidden="true"></div>
+            <div class="parents-names" aria-label="Parintii mirilor">
+              <p class="parents-side left">Ecaterina și Adrian<br />Iorga</p>
+              <p class="parents-side right">Cerasela și Gabriel<br />Slăvulete</p>
+            </div>
+          </section>
+        </div>
+        <div class="between-cards-heart reveal-up" aria-hidden="true">♥</div>
+        <div class="godparents-group reveal-up">
+          <section class="parents-card godparents-card" aria-label="ȘI SUB ÎNDRUMAREA NAȘILOR">
+            <p class="parents-blessing">ȘI ÎNDRUMAȚI CU DRAG DE NAȘII NOȘTRI</p>
+            <div class="infinity-divider parents-card-divider" aria-hidden="true"></div>
+            <div class="parents-names" aria-label="Nașii mirilor">
+              <p class="parents-side godparents-side">Tatiana și Ciprian Muscalu</p>
+            </div>
+          </section>
+          <div class="infinity-divider post-godparents-divider" aria-hidden="true"></div>
+        </div>
+      </div>
+      <section class="event-details-section reveal-up" aria-label="Detalii eveniment">
+        <div class="overlay-card-content">
+            <div class="event-block ceremony-card reveal-up reveal-card-left" style="--reveal-delay: 0.4s;">
+              <img class="ceremony-image" src="img/cununie.png"
+                alt="Cununie religioasă" />
+              <div class="ceremony-header">
+                <p class="ceremony-title">Cununie religioasă</p>
+                <div class="ceremony-divider" aria-hidden="true"></div>
+              </div>
+              <div class="ceremony-details">
+                <p class="ceremony-location">Biserica Sf. Gheorghe Otopeni</p>
+                <div class="ceremony-meta-split">
+                  <div class="ceremony-meta-item">
+                    <span class="ceremony-meta-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" focusable="false">
+                        <rect x="3.8" y="5.2" width="16.4" height="14.2" rx="2" ry="2" />
+                        <path d="M7 3.8v3M17 3.8v3M3.8 9.2h16.4" />
+                      </svg>
+                    </span>
+                    <span class="ceremony-meta-label">Data</span>
+                    <span class="ceremony-meta-value ceremony-meta-value-date">10 Oct 2026</span>
+                  </div>
+                  <div class="ceremony-meta-item">
+                    <span class="ceremony-meta-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" focusable="false">
+                        <circle cx="12" cy="12" r="8.5" />
+                        <path d="M12 7.6v5.2l3 1.7" />
+                      </svg>
+                    </span>
+                    <span class="ceremony-meta-label">Ora</span>
+                    <span class="ceremony-meta-value">13:00</span>
+                  </div>
+                </div>
+                <a class="map-button ceremony-map-button"
+                href="https://www.google.com/maps/search/?api=1&query=44.55248509427344,26.074229012036035"
+                data-lat="44.55248509427344" data-lng="26.074229012036035" target="_blank" rel="noopener noreferrer">
+                  <span class="ceremony-meta-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M6 20V4" />
+                      <path d="M6 5h10l-2.2 3L16 11H6Z" />
+                    </svg>
+                  </span>
+                  <span>Vezi hartă</span>
+                </a>
+              </div>
+            </div>
 
-      <section class="card gifts">
-        <img src="https://boda-mar-jaume.lovable.app/assets/champagne-illustration-CplOg0Lb.png" alt="Copas" />
-        <h2>Regalos</h2>
-        <p>Vuestra presencia es lo mÃ¡s importante para nosotros. Si deseÃ¡is hacernos un regalo, podÃ©is hacerlo de la forma que os resulte mÃ¡s cÃ³moda.</p>
-      </section>
+            <div class="event-block ceremony-card event-block-spaced reveal-up reveal-card-right" style="--reveal-delay: 0.4s;">
+              <img class="ceremony-image" src="img/petrecere.png"
+                alt="Petrecerea de nuntă" />
+              <div class="ceremony-header">
+                <p class="ceremony-title">Restaurant</p>
+                <div class="ceremony-divider" aria-hidden="true"></div>
+              </div>
+              <div class="ceremony-details">
+                <p class="ceremony-location">Reina Events North</p>
+                <div class="ceremony-meta-split">
+                  <div class="ceremony-meta-item">
+                    <span class="ceremony-meta-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" focusable="false">
+                        <rect x="3.8" y="5.2" width="16.4" height="14.2" rx="2" ry="2" />
+                        <path d="M7 3.8v3M17 3.8v3M3.8 9.2h16.4" />
+                      </svg>
+                    </span>
+                    <span class="ceremony-meta-label">Data</span>
+                    <span class="ceremony-meta-value ceremony-meta-value-date">10 Oct 2026</span>
+                  </div>
+                  <div class="ceremony-meta-item">
+                    <span class="ceremony-meta-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" focusable="false">
+                        <circle cx="12" cy="12" r="8.5" />
+                        <path d="M12 7.6v5.2l3 1.7" />
+                      </svg>
+                    </span>
+                    <span class="ceremony-meta-label">Ora</span>
+                    <span class="ceremony-meta-value">18:30</span>
+                  </div>
+                </div>
+                <a class="map-button ceremony-map-button"
+                href="https://www.google.com/maps/search/?api=1&query=44.53242929065893,26.06760188343541"
+                data-lat="44.53242929065893" data-lng="26.06760188343541" target="_blank" rel="noopener noreferrer">
+                  <span class="ceremony-meta-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M6 20V4" />
+                      <path d="M6 5h10l-2.2 3L16 11H6Z" />
+                    </svg>
+                  </span>
+                  <span>Vezi hartă</span>
+                </a>
+              </div>
+            </div>
 
-      <section class="card rsvp">
-        <img src="https://boda-mar-jaume.lovable.app/assets/rings-illustration-tO3OeALU.png" alt="Anillos" />
-        <h2>Confirma tu asistencia</h2>
-        <p>Esperamos contar contigo.</p>
-        <form id="rsvpForm">
-          <input type="text" name="name" placeholder="Tu nombre" required />
-          <input type="email" name="email" placeholder="Email (opcional)" />
-          <textarea name="message" placeholder="Mensaje para los novios (opcional)"></textarea>
-          <button type="submit">Enviar confirmaciÃ³n</button>
-        </form>
-        <p id="rsvpMessage" class="rsvp-message" hidden>Â¡Gracias por confirmar tu asistencia!</p>
+          </div>
       </section>
-    </main>
+      <div class="rsvp-cta-group reveal-up" style="--reveal-delay: 0.4s;">
+        <div class="infinity-divider post-godparents-divider" aria-hidden="true"></div>
+        <div class="rsvp-cta">
+          <h2 class="script-subtitle">Confirmă prezența</h2>
+          <p class="rsvp-cta-copy">Vă așteptăm cu drag!</p>
+          <p class="rsvp-cta-copy">Vă rugăm sa ne confirmați prezența până la data de 01.09.2026.</p>
+          <button type="button" id="openRsvpModalBtn" class="rsvp-open-btn">Confirmă</button>
+        </div>
+      </div>
 
-    <script src="script.js"></script>
-  </body>
-</html>
+      <section class="closing-thanks reveal-up" aria-label="Mesaj final">
+        <p class="closing-thanks-names">Rebeca <span class="closing-thanks-heart" aria-hidden="true">♡</span> Radu</p>
+        <p class="closing-thanks-note">Vă mulțumim!</p>
+      </section>
+    </section>
+  </main>
+
+  <div id="rsvpModal" class="rsvp-modal" hidden>
+    <div class="rsvp-modal-backdrop" data-close-rsvp="true"></div>
+    <div class="rsvp-modal-panel" role="dialog" aria-modal="true" aria-labelledby="rsvpModalTitle">
+      <div class="nav-chooser-header rsvp-modal-header">
+        <h3 id="rsvpModalTitle" class="rsvp-modal-title">Confirmare prezență</h3>
+        <button type="button" class="nav-close-x-btn rsvp-close-x-btn" aria-label="Închide" data-close-rsvp="true">×</button>
+      </div>
+      <p class="rsvp-phones">Rebeca: 0768 573 438 | Radu: 0746 773 699</p>
+
+      <form id="rsvpPopupForm" class="rsvp-popup-form" novalidate>
+        <div class="rsvp-name-row">
+          <div id="rsvpLastNameWrap" class="rsvp-input-wrap">
+            <input id="rsvpLastName" name="lastName" type="text" placeholder="* Nume" aria-label="Nume" required />
+            <span class="rsvp-required-alert" aria-hidden="true">!</span>
+          </div>
+          <div id="rsvpFirstNameWrap" class="rsvp-input-wrap">
+            <input id="rsvpFirstName" name="firstName" type="text" placeholder="* Prenume" aria-label="Prenume" required />
+            <span class="rsvp-required-alert" aria-hidden="true">!</span>
+          </div>
+        </div>
+
+        <div id="rsvpGuestSelect" class="rsvp-guest-select">
+          <input id="rsvpGuests" name="guestCount" type="hidden" value="" />
+          <button
+            id="rsvpGuestTrigger"
+            type="button"
+            class="rsvp-guest-trigger is-placeholder"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-controls="rsvpGuestMenu"
+          >
+            <span id="rsvpGuestTriggerText">Numar de persoane</span>
+            <span class="rsvp-guest-trigger-icon" aria-hidden="true">▾</span>
+          </button>
+          <ul id="rsvpGuestMenu" class="rsvp-guest-menu" role="listbox" aria-label="Numar de persoane">
+            <li><button type="button" class="rsvp-guest-option" data-guest-value="1">1</button></li>
+            <li><button type="button" class="rsvp-guest-option" data-guest-value="2">2</button></li>
+            <li><button type="button" class="rsvp-guest-option" data-guest-value="3">3</button></li>
+            <li><button type="button" class="rsvp-guest-option" data-guest-value="4">4</button></li>
+            <li><button type="button" class="rsvp-guest-option" data-guest-value="5">5</button></li>
+            <li><button type="button" class="rsvp-guest-option" data-guest-value="6">6</button></li>
+            <li><button type="button" class="rsvp-guest-option" data-guest-value="7">7</button></li>
+            <li><button type="button" class="rsvp-guest-option" data-guest-value="8">8</button></li>
+            <li><button type="button" class="rsvp-guest-option" data-guest-value="9">9</button></li>
+            <li><button type="button" class="rsvp-guest-option" data-guest-value="10">10</button></li>
+          </ul>
+          <span class="rsvp-required-alert" aria-hidden="true">!</span>
+        </div>
+
+        <input id="rsvpPhone" name="phone" type="tel" placeholder="Telefon" aria-label="Telefon" />
+
+        <fieldset class="rsvp-popup-choice">
+          <legend><span class="field-required" aria-hidden="true">*</span> Vei participa?</legend>
+          <label><input type="radio" name="attendance" value="Confirm prezența" required /> Confirm prezența</label>
+          <label><input type="radio" name="attendance" value="Nu pot să particip" required /> Nu pot să particip</label>
+          <span class="rsvp-required-alert rsvp-choice-alert" aria-hidden="true">!</span>
+        </fieldset>
+
+        <button type="submit" class="rsvp-submit-btn">Trimite</button>
+        <p id="rsvpPopupMessage" class="rsvp-popup-message" aria-live="polite"></p>
+        <button type="button" id="closeRsvpModalBtn" class="rsvp-close-btn">Închide</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="navChooser" class="nav-chooser" hidden>
+    <div class="nav-chooser-backdrop" data-close-nav="true"></div>
+    <div class="nav-chooser-panel" role="dialog" aria-modal="true" aria-labelledby="navChooserTitle">
+      <div class="nav-chooser-header">
+        <p id="navChooserTitle" class="nav-chooser-title">Alege aplicația de navigație</p>
+        <button type="button" id="closeNavChooserXBtn" class="nav-close-x-btn" aria-label="Închide" data-close-nav="true">×</button>
+      </div>
+      <div class="nav-chooser-divider" aria-hidden="true"></div>
+      <div class="nav-chooser-actions">
+        <button type="button" id="openGoogleMapsBtn" class="nav-choice-btn">
+          <span class="nav-choice-icon" aria-hidden="true">
+            <img src="img/google-maps.png" alt="" />
+          </span>
+          <span class="nav-choice-label">Google Maps</span>
+        </button>
+        <button type="button" id="openWazeBtn" class="nav-choice-btn">
+          <span class="nav-choice-icon" aria-hidden="true">
+            <img src="img/waze.png" alt="" />
+          </span>
+          <span class="nav-choice-label">Waze</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/app-core.js"></script>
+  <script src="assets/js/app-init.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
