@@ -437,6 +437,7 @@ const setupNavigationChoice = () => {
 
     navChooser.classList.remove('is-open');
     closeTimerId = window.setTimeout(() => {
+      navChooser.classList.remove('is-visible');
       navChooser.hidden = true;
       selectedLat = null;
       selectedLng = null;
@@ -463,6 +464,7 @@ const setupNavigationChoice = () => {
     selectedLat = lat;
     selectedLng = lng;
     navChooser.hidden = false;
+    navChooser.classList.add('is-visible');
     requestAnimationFrame(() => {
       navChooser.classList.add('is-open');
     });

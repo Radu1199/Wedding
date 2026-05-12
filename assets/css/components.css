@@ -313,10 +313,10 @@
   inset: 0;
   z-index: 80;
   opacity: 0;
-  transition: opacity 0.26s ease;
+  transition: none;
 }
 
-.nav-chooser.is-open {
+.nav-chooser.is-visible {
   opacity: 1;
 }
 
@@ -327,13 +327,10 @@
   opacity: 0;
   -webkit-backdrop-filter: blur(0);
   backdrop-filter: blur(0);
-  transition:
-    opacity 0.34s ease,
-    -webkit-backdrop-filter 0.34s ease,
-    backdrop-filter 0.34s ease;
+  transition: none;
 }
 
-.nav-chooser.is-open .nav-chooser-backdrop {
+.nav-chooser.is-visible .nav-chooser-backdrop {
   opacity: 1;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
