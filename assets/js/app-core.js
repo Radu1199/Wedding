@@ -42,8 +42,6 @@ let invitationOpened = false;
 let envelopeOpened = false;
 let revealSetupDone = false;
 let overlayLocks = 0;
-let lockedScrollY = 0;
-let lockedScrollX = 0;
 
 const lockPageScroll = () => {
   overlayLocks += 1;
@@ -51,14 +49,8 @@ const lockPageScroll = () => {
     return;
   }
 
-  lockedScrollY = window.scrollY || window.pageYOffset || 0;
-  lockedScrollX = window.scrollX || window.pageXOffset || 0;
   document.documentElement.classList.add('modal-open');
   document.body.classList.add('modal-open');
-  document.body.style.top = `-${lockedScrollY}px`;
-  document.body.style.left = '0';
-  document.body.style.right = '0';
-  document.body.style.width = '100%';
 };
 
 const unlockPageScroll = () => {
@@ -66,11 +58,6 @@ const unlockPageScroll = () => {
   if (overlayLocks === 0) {
     document.documentElement.classList.remove('modal-open');
     document.body.classList.remove('modal-open');
-    document.body.style.top = '';
-    document.body.style.left = '';
-    document.body.style.right = '';
-    document.body.style.width = '';
-    window.scrollTo(lockedScrollX, lockedScrollY);
   }
 };
 
@@ -296,8 +283,59 @@ const setupRsvpModal = () => {
     });
   };
 
+  const closeIfTouchInsideCloseButton = (clientX, clientY) => {
+    if (!isModalOpen) {
+      return false;
+    }
+
+    const rect = closeBtn.getBoundingClientRect();
+    const isInsideX = clientX >= rect.left && clientX <= rect.right;
+    const isInsideY = clientY >= rect.top && clientY <= rect.bottom;
+
+    if (isInsideX && isInsideY) {
+      closeModal();
+      return true;
+    }
+
+    return false;
+  };
+
+  const handleCloseAction = event => {
+    event.preventDefault();
+    closeModal();
+  };
+
   openBtn.addEventListener('click', openModal);
-  closeBtn.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', handleCloseAction);
+  closeBtn.addEventListener('pointerup', handleCloseAction);
+  closeBtn.addEventListener('touchend', handleCloseAction, { passive: false });
+
+  modal.addEventListener(
+    'pointerup',
+    event => {
+      if (closeIfTouchInsideCloseButton(event.clientX, event.clientY)) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    },
+    true
+  );
+
+  modal.addEventListener(
+    'touchend',
+    event => {
+      const touch = event.changedTouches && event.changedTouches[0];
+      if (!touch) {
+        return;
+      }
+
+      if (closeIfTouchInsideCloseButton(touch.clientX, touch.clientY)) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    },
+    { capture: true, passive: false }
+  );
 
   modal.addEventListener('click', event => {
     const target = event.target;
@@ -306,7 +344,10 @@ const setupRsvpModal = () => {
       closeGuestMenu();
     }
 
-    if (target instanceof HTMLElement && target.dataset.closeRsvp === 'true') {
+    if (
+      target instanceof HTMLElement &&
+      (target.dataset.closeRsvp === 'true' || target.closest('#closeRsvpModalBtn'))
+    ) {
       closeModal();
     }
   });
@@ -586,9 +627,16 @@ const openInvitation = () => {
 
   invitationOpened = true;
   if (envelopeIntro) {
+    // Stop any remaining hit-area from the intro/button on mobile browsers.
+    envelopeContinue?.classList.remove('visible');
+    envelopeContinue?.setAttribute('aria-hidden', 'true');
     envelopeIntro.classList.add('hidden');
     envelopeIntro.setAttribute('aria-hidden', 'true');
     envelopeIntro.setAttribute('tabindex', '-1');
+
+    window.setTimeout(() => {
+      envelopeIntro.style.display = 'none';
+    }, 500);
   }
 
   invitation.classList.add('show');
@@ -676,4 +724,5 @@ if (rsvpForm && rsvpMessage) {
     rsvpForm.reset();
   });
 }
+
 
